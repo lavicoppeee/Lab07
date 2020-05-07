@@ -5,6 +5,7 @@ public class Nerc {
 	
 	private int id;
 	private String value;
+	private PowerOutages blackOut;
 
 	public Nerc(int id, String value) {
 		this.id = id;
