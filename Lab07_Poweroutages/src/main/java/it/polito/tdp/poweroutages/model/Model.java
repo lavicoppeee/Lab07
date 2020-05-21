@@ -28,9 +28,10 @@ public class Model {
 		this.maxOre = oreM;
 
 		this.blackOut = new ArrayList<>(podao.getBlackOutinNerc(nerc));
-
+		
+		this.bestFolla=0;
 		List<PowerOutages> parziale = new ArrayList<>();
-		cerca(parziale, 1);
+		cerca(parziale, 0);
 
 		return bestSoluzione;
 	}
@@ -45,7 +46,7 @@ public class Model {
 		// Controllo se la soluzione che ho è meglio dell'altra oppure no
 
 		Integer newFolla = this.getFolla(parziale);
-		if (newFolla > bestFolla) {
+		if (newFolla > this.bestFolla) {
 			bestSoluzione = new ArrayList<>(parziale);
 			bestFolla = newFolla;
 		}
